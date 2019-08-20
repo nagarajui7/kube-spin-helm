@@ -45,7 +45,7 @@ UseCase:
 End user does a commit in git, which should trigger the jenkins job , create the docker image and push it to dockerhub. Once this job is
 done, it should trigger the spinnaker pipeline which will deploy the image in the kubernetes cluster
 
-Prerequisities:
+**Prerequisities**:
 For the above use case to happen, we need to enable and add accounts for jenkins as ci provider and github as artifact provider
 hal config ci jenkins enable
 hal config ci jenkins master add my-jenkins --address <jenkins-url> --username <jenkins-username> --password 
