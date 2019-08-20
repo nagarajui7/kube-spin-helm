@@ -39,3 +39,20 @@ hal version list
 hal config version edit --version 1.15.2
 sudo hal deploy apply
 
+Spinnaker UI will be accessible only on localhost. To get the UI we need to do tunnelling.
+
+UseCase:
+End user does a commit in git, which should trigger the jenkins job , create the docker image and push it to dockerhub. Once this job is
+done, it should trigger the spinnaker pipeline which will deploy the image in the kubernetes cluster
+
+Prerequisities:
+For the above use case to happen, we need to enable and add accounts for jenkins as ci provider and github as artifact provider
+hal config ci jenkins enable
+hal config ci jenkins master add my-jenkins --address <jenkins-url> --username <jenkins-username> --password 
+
+We need to genarate a personal auth token in github. (Path: Settings-> Developer Settings-> Personal access tokens)
+save the genarated token to a file (in this case TOKEN_FILE)
+hal config features edit --artifacts true
+hal config artifact github enable
+hal config artifact github account add my-github --token-file TOKEN_FILE
+
