@@ -22,7 +22,7 @@ check the version using: `hal -v`
 
 `hal config provider kubernetes account add my-k8s --repositories my-docker`
 
-CONTEXT=`kubectl config current-context`
+`CONTEXT=kubectl config current-context`
 
 `hal config provider kubernetes account add my-k8s-3 --provider-version v2 --context $CONTEXT`
 
