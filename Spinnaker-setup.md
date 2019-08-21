@@ -31,6 +31,7 @@ check the version using: `hal -v`
 `hal config deploy edit --type localdebian`
 
 5. Setup Storage GCS
+
 We will be creating an ***iam role*** and a auth token for spinning a gcs bucket which will be used as storage
 
 `gcloud auth login`
