@@ -2,8 +2,11 @@
 1. Install Halyard:
 
 `curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh`
+
 run it as ubuntu user
+
 `sudo bash InstallHalyard.sh`
+
 check the version using: `hal -v`
 
 2.Setting up Docker-Registry Cloud Provider
