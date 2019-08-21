@@ -1,6 +1,7 @@
 # Steps for installing Spinnaker
-1. Install Halyard
-curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
+1. Install Halyard:
+
+`curl -O https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh`
 run it as ubuntu user
 `sudo bash InstallHalyard.sh`
 check the version using: `hal -v`
