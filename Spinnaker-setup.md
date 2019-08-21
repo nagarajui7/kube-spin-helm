@@ -7,6 +7,7 @@ check the version using: `hal -v`
 
 2.Setting up Docker-Registry Cloud Provider
 `hal config provider docker-registry enable`
+
 `hal config provider docker-registry account add my-docker --address index.docker.io --repositories 	library/nginx --username nagarajubatchu1 --password`
 
 3. Setting up Kubernetes Cloud Provider
