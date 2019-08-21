@@ -35,8 +35,8 @@ We will be creating an ***iam role*** and a auth token for spinning a gcs bucket
 
 `gcloud auth login`
 
-SERVICE_ACCOUNT_NAME=spinnaker-gcs-account
-SERVICE_ACCOUNT_DEST=~/.gcp/gcs-account.json
+`SERVICE_ACCOUNT_NAME=spinnaker-gcs-account`
+`SERVICE_ACCOUNT_DEST=~/.gcp/gcs-account.json`
 
 `gcloud iam service-accounts create $SERVICE_ACCOUNT_NAME --display-name $SERVICE_ACCOUNT_NAME`
 
