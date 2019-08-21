@@ -98,6 +98,7 @@ We will setup the pipeline with *Configuration*, *Bake(Manifest)* and *Deploy(Ma
 Select **Expected Artifacts** and provide the paths for *values.yaml* and *helm tar file*. Select Kind as *Github*
 To access a github file via api:
 Template: https://api.github.com/repos/username/repo_name/contents/file-path
+
 Ex: https://api.github.com/repos/nagarajui7/kube-spin-helm/contents/helloworld-chart/values.yaml
 Save the changes.
 Then, Select **Automated Triggers** and select *Jenkins* from Type, so that it will listen to Jenkins Jobs
