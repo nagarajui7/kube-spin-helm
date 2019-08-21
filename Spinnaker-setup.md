@@ -88,8 +88,10 @@ save the genarated token to a file (in this case TOKEN_FILE)
 `hal config artifact github account add my-github --token-file TOKEN_FILE`
 
 We should have a repo in github holding *code*, *Dockerfile*, *helm-chart*, ***tar file of helm chart***
-create the helm chart using *helm chart chart-name*
-package it using *helm package chart-name*
+
+To create the helm chart: *helm chart chart-name*
+
+To package: *helm package chart-name*
 
 **Working with Spinnaker UI**
 1. We need to create applications to start with
