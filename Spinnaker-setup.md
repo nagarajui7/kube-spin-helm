@@ -68,14 +68,20 @@ done, it should trigger the spinnaker pipeline which will deploy the image in th
 
 ## Prerequisities:
 For the above use case to happen, we need to enable and add accounts for jenkins as ci provider and github as artifact provider
-hal config ci jenkins enable
-hal config ci jenkins master add my-jenkins --address <jenkins-url> --username <jenkins-username> --password 
+
+`hal config ci jenkins enable`
+
+`hal config ci jenkins master add my-jenkins --address <jenkins-url> --username <jenkins-username> --password `
 
 We need to genarate a **personal auth token** in github. (Path: Settings-> Developer Settings-> Personal access tokens)
 save the genarated token to a file (in this case TOKEN_FILE)
-hal config features edit --artifacts true
-hal config artifact github enable
-hal config artifact github account add my-github --token-file TOKEN_FILE
+
+`hal config features edit --artifacts true`
+
+`hal config artifact github enable`
+
+`hal config artifact github account add my-github --token-file TOKEN_FILE`
+
 We should have a repo in github holding *code*, *Dockerfile*, *helm-chart*, ***tar file of helm chart***
 create the helm chart using *helm chart chart-name*
 package it using *helm package chart-name*
@@ -87,6 +93,7 @@ package it using *helm package chart-name*
 **Creating a pipeline**:
 1. Once your application is created,u can see *Pipelines*, *Infrastructure*, *Tasks* click on *Pipelines*give a name for it and click on create.
 We will setup the pipeline with *Configuration*, *Bake(Manifest)* and *Deploy(Manifest)* stages
+
 2. The first stage will be **Configuration**. 
 Select **Expected Artifacts** and provide the paths for *values.yaml* and *helm tar file*. Select Kind as *Github*
 To access a github file via api:
@@ -96,12 +103,14 @@ Save the changes.
 Then, Select **Automated Triggers** and select *Jenkins* from Type, so that it will listen to Jenkins Jobs
 Select master details which we have configured previously from the drop down.
 Select the job, which spinnaker should be listening to and click on Save
+
 3. Click on Add Stage and Select **Bake(Manifest)**
 Select the Render Engine as *HELM2*. Template artifact as *helm-tar-file* and Overrides as *yaml file*
 ***NOTE***: Please make sure you select the artifacts from the drop down. If nothing is present please check the expected artifacts.
 Provide a name for under **Template Renderer**
 In **Produces Artifacts** section and select the kind as *base64* and provide the name same as that of Template Renderer.
 Click on Save.
+
 4. Again Click on Add Stage and select **Deploy(Manifest)**.
 Select the Kubernetes account we have enabled under **Account** and Manifest artifact as *base64* artifact, which was created in above step.
 
