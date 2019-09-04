@@ -10,7 +10,7 @@ metadata:
     moniker.spinnaker.io/cluster: replicaSet helloworld
     moniker.spinnaker.io/sequence: '0'
     strategy.spinnaker.io/max-version-history: '2'
-    traffic.spinnaker.io/load-balancers: '["service hellosvc"]'
+    traffic.spinnaker.io/load-balancers: '["service hellosvc-bg"]'
   labels:
     app.kubernetes.io/managed-by: spinnaker
     app.kubernetes.io/name: helloworld
