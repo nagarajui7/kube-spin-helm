@@ -43,5 +43,5 @@ func main() {
 // hello responds to the request with a plain-text "Hello, world" message.
 func hello(w http.ResponseWriter, r *http.Request) {
 	log.Printf("GET %s", r.URL.Path)
-	fmt.Fprintf(w, "Hello world v1\n")
+	fmt.Fprintf(w, "Hello world v2\n")
 }
