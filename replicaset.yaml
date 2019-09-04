@@ -38,7 +38,7 @@ spec:
         tier: helloworld
     spec:
       containers:
-        - image: 'gcr.io/spinnaker-marketplace/helloworld:v1'
+        - image: 'nagarajubatchu1/spinnaker/helloworld:v2'
           imagePullPolicy: IfNotPresent
           name: helloworld
           ports:
