@@ -122,8 +122,8 @@ Click on Save.
 4. Again Click on Add Stage and select **Deploy(Manifest)**.
 Select the Kubernetes account we have enabled under **Account** and Manifest artifact as *base64* artifact, which was created in above step.
 
+Now the pipeline is ready. whenever there is a job completed in Jenkins, this pipeline is going to be triggered.
+
 Canary setup:
 
 https://www.mirantis.com/blog/spinnaker-canary-pipelines-how-to-set-up-kayenta-with-prometheus/
-
-Now the pipeline is ready. whenever there is a job completed in Jenkins, this pipeline is going to be triggered.
